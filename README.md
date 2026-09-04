@@ -8,7 +8,7 @@ or semantic-span output.
 
 ```r
 # install.packages("BiocManager")
-BiocManager::install("kojix2/biosyntax")
+BiocManager::install("kojix2/biosyntax-r")
 ```
 
 ## Usage
