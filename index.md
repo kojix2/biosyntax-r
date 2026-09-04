@@ -10,8 +10,8 @@ Documentation: <https://kojix2.github.io/biosyntax-r/>
 
 ``` r
 
-# install.packages("BiocManager")
-BiocManager::install("kojix2/biosyntax-r")
+install.packages("remotes")
+remotes::install_github("kojix2/biosyntax-r")
 ```
 
 ## Usage
