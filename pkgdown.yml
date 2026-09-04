@@ -1,0 +1,9 @@
+pandoc: 3.8.3
+pkgdown: 2.2.1
+pkgdown_sha: ~
+articles:
+  biosyntax: biosyntax.html
+last_built: 2026-09-04T11:57Z
+urls:
+  reference: https://kojix2.github.io/biosyntax-r/reference
+  article: https://kojix2.github.io/biosyntax-r/articles
