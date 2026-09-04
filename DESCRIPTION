@@ -24,7 +24,8 @@ Suggests:
     VariantAnnotation
 VignetteBuilder: knitr
 SystemRequirements: C99
-URL: https://github.com/kojix2/biosyntax-r
+URL: https://github.com/kojix2/biosyntax-r,
+    https://kojix2.github.io/biosyntax-r/
 BugReports: https://github.com/kojix2/biosyntax-r/issues
 biocViews: DataRepresentation, Visualization, Sequencing, VariantAnnotation
 Config/testthat/edition: 3

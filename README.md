@@ -4,6 +4,8 @@ Syntax highlighting for biological text in R. `biosyntax` embeds
 [libbiosyntax](https://github.com/kojix2/libbiosyntax) and produces ANSI, HTML,
 or semantic-span output.
 
+Documentation: <https://kojix2.github.io/biosyntax-r/>
+
 ## Installation
 
 ```r

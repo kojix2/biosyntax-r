@@ -1,5 +1,6 @@
 ^\.github$
 ^\.gitignore$
-^\.typos\.toml$
+^_pkgdown\.yml$
+^docs$
 ^LICENSE\.md$
 ^LICENSE\.note$

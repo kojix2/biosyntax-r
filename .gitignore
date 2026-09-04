@@ -1,9 +1,5 @@
 .DS_Store
-.env
-.env.*
-!.env.example
 .Renviron
-
 .Rhistory
 .RData
 .Ruserdata
@@ -12,13 +8,9 @@
 /*.Rcheck/
 /*.tar.gz
 /inst/doc/
-/doc/
-/Meta/
+/docs/
 
 src/*.o
 src/*.so
 src/*.dll
-src/*.dylib
-src/*.a
 src/symbols.rds
-src/*.dSYM/
