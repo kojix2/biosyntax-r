@@ -1,0 +1,30 @@
+Package: biosyntax
+Type: Package
+Title: Syntax Highlighting for Biological Data in R
+Version: 0.1.0
+Authors@R: 
+    person("kojix2", role = c("aut", "cre"),
+           email = "kojix2@users.noreply.github.com")
+Description: Highlights biological text such as FASTA, FASTQ, SAM, VCF, BED,
+    GTF, GFF and PDB. The package embeds the dependency-free 'libbiosyntax' C
+    engine and produces ANSI, HTML and token-span output. It also accepts
+    objects from 'Biostrings', 'VariantAnnotation' and 'GenomicRanges'.
+License: MIT + file LICENSE
+Copyright: See file inst/COPYRIGHTS.
+Encoding: UTF-8
+Depends: R (>= 4.0.0)
+Suggests:
+    BiocStyle,
+    Biostrings,
+    GenomicRanges,
+    knitr,
+    rmarkdown,
+    rtracklayer,
+    testthat (>= 3.0.0),
+    VariantAnnotation
+VignetteBuilder: knitr
+SystemRequirements: C99
+URL: https://github.com/kojix2/biosyntax
+BugReports: https://github.com/kojix2/biosyntax/issues
+biocViews: DataRepresentation, Visualization, Sequencing, VariantAnnotation
+Config/testthat/edition: 3

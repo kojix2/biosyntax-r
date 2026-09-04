@@ -1,0 +1,72 @@
+---
+title: "biosyntax: biological syntax highlighting in R"
+author: "biosyntax authors"
+output: BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{biosyntax: biological syntax highlighting in R}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+`biosyntax` highlights biological text without parsing or changing the data.
+It returns ANSI, HTML, or semantic spans and accepts several Bioconductor
+classes.
+
+# Text input
+
+```{r}
+library(biosyntax)
+
+vcf_lines <- c(
+  "##fileformat=VCFv4.3",
+  "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO",
+  "chr1\t42\t.\tA\tG\t60\tPASS\tDP=12"
+)
+
+x <- biosyntax(vcf_lines, format = "vcf")
+biosyntax_spans(x)
+x
+```
+
+# Biostrings
+
+```{r, eval=requireNamespace("Biostrings", quietly=TRUE)}
+dna <- Biostrings::DNAStringSet(c(ref = "ACGTACGT", alt = "ACGTNCGT"))
+biosyntax(dna)
+```
+
+DNA and RNA use the nucleotide color scheme. Amino-acid sequences use the
+CLUSTAL scheme by default.
+
+# VariantAnnotation
+
+```{r, eval=requireNamespace("VariantAnnotation", quietly=TRUE)}
+path <- tempfile(fileext = ".vcf")
+writeLines(c(
+  "##fileformat=VCFv4.2",
+  "##contig=<ID=chr1,length=1000>",
+  "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO",
+  "chr1\t42\t.\tA\tG\t60\tPASS\t."
+), path)
+vcf <- VariantAnnotation::readVcf(path, genome = "example")
+biosyntax(vcf)
+unlink(path)
+```
+
+# GenomicRanges
+
+```{r, eval=requireNamespace("GenomicRanges", quietly=TRUE) && requireNamespace("rtracklayer", quietly=TRUE)}
+gr <- GenomicRanges::GRanges("chr1:10-20")
+biosyntax(gr, format = "bed")
+```
+
+# Explicit output
+
+```{r}
+ansi <- as_ansi(x)
+html <- as_html(x)
+```

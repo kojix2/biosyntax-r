@@ -1,0 +1,9 @@
+The R wrapper and package-specific files are licensed under the MIT License.
+
+The vendored files src/biosyntax.c and src/biosyntax.h are from libbiosyntax
+(https://github.com/kojix2/libbiosyntax) and retain their original
+LGPL-2.1-or-later license and SPDX notices. They are included as source and
+compiled into the package shared library for portability.
+
+Redistributors must preserve the license terms that apply to each component.
+See inst/COPYRIGHTS for component-level attribution.
